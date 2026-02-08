@@ -192,6 +192,24 @@
                 <div id="author-card" class="card author-highlight" style="max-width: 700px; margin: 0 auto; text-align: center; border-left: 5px solid var(--primary-color);">
                     <p>Loading author...</p>
                 </div>
+                <script>
+                    (function(){
+                        const ac = document.getElementById('author-card');
+                        if(!ac) return;
+                        function renderAuthor(){
+                            if(window.authors && Array.isArray(window.authors) && window.authors.length>0){
+                                const today = new Date().getDate();
+                                const daily = window.authors[today % window.authors.length];
+                                ac.innerHTML = `\n                                    <div class="author-highlight card">\n                                      <h3 class="brand-gradient" style="margin-bottom: 10px;">${daily.name}</h3>\n                                      <p style="font-size: 0.95rem; line-height: 1.5;">${daily.bio}</p>\n                                      <small style="display:block; margin-top: 15px; opacity: 0.6; font-style: italic;">\n                                        Featured Author for ${new Date().toLocaleDateString()}\n                                      </small>\n                                    </div>\n                                `;
+                                return true;
+                            }
+                            return false;
+                        }
+                        if(!renderAuthor()){
+                            const iv = setInterval(()=>{ if(renderAuthor()) clearInterval(iv); }, 100);
+                        }
+                    })();
+                </script>
             </section>
         </div>
 
