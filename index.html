@@ -223,18 +223,6 @@
         </section>
     </main>
 
-    <div id="auth-modal" class="auth-modal">
-        <div class="auth-content">
-            <span class="close-auth" onclick="closeAuthModal()">&times;</span>
-            <h2>Welcome Back</h2>
-            <p style="opacity: 0.7; margin-bottom: 20px;">Enter your name to access your library.</p>
-            <input type="text" id="username-input" placeholder="Your Name">
-            <input type="password" placeholder="Password (Optional)">
-            <button class="cta-btn" style="width: 100%; margin-top: 15px;" onclick="performLogin()">Sign In</button>
-            <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.6;">*This is a demo login.*</p>
-        </div>
-    </div>
-
     <footer>
         <div class="footer-content" style="max-width: 800px; margin: 0 auto;">
             <h3>Newsletter</h3>
@@ -317,6 +305,13 @@
             if(e.target.innerText === 'H' || e.target.classList.contains('user-avatar')) {
                 showAccount();
             }
+        });
+
+        // Verify scripts loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("✓ Index page loaded");
+            console.log("✓ bookData available:", typeof bookData !== 'undefined');
+            console.log("✓ Auth functions available:", typeof setupGlobalLogin !== 'undefined');
         });
     </script>
 
