@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readify | Book Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Readify Logo">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explorer.html" class="active">Book Explorer</a></li>
+                <li><a href="tracker.html">Tracker</a></li>
+                <li><a href="recommender.html">Recommender</a></li>
+                <li><a href="flow.html">Reading Flow</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                
+                <li id="login-container"></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="glass-panel" style="text-align: center; margin-bottom: 2rem;">
+            <h1 class="brand-gradient" style="margin-bottom: 10px;">Explore Our Library</h1>
+            <p style="margin-bottom: 25px; color: #555;">Search by title, author, or filter by genre.</p>
+            
+            <div style="display: flex; gap: 10px; max-width: 700px; margin: 0 auto; flex-wrap: wrap;">
+                <input type="text" id="search-input" placeholder="Search title or author (e.g. 'Dune')..." style="flex: 2; padding: 15px; background: rgba(255,255,255,0.7);">
+                
+                <select id="genre-filter" style="flex: 1; min-width: 150px; padding: 15px; background: rgba(255,255,255,0.7); border-radius: 8px;">
+                    <option value="all">All Genres</option>
+                    <option value="Fiction">Fiction</option>
+                    <option value="Non-Fiction">Non-Fiction</option>
+                    <option value="Romance">Romance</option> <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Comics">Comics</option>
+                </select>
+            </div>
+        </section>
+
+        <div id="book-grid" class="book-grid">
+            </div>
+
+        <div id="book-modal" class="modal">
+            <div class="modal-content">
+                <div id="modal-body">
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content" style="max-width: 800px; margin: 0 auto;">
+            <div class="footer-menu">
+                <a href="index.html">Home</a>
+                <a href="explorer.html">Book Explorer</a>
+                <a href="tracker.html">Tracker</a>
+                <a href="recommender.html">Recommender</a>
+                <a href="flow.html">Reading Flow</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+        </div>
+        <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.8rem;">&copy; 2026 Readify. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/books.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="script.js"></script>
+    <script src="/js/explorer.js"></script>
+
+    
+</body>
+</html>

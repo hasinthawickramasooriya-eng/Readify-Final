@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readify | Feedback</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .accordion {
+            background-color: rgba(255, 255, 255, 0.6);
+            color: var(--secondary-color);
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.3s;
+            font-weight: bold;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+        .active, .accordion:hover {
+            background-color: white;
+            color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .panel {
+            padding: 0 18px;
+            background-color: rgba(255, 255, 255, 0.4);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            border-radius: 0 0 8px 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Readify Logo">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explorer.html">Book Explorer</a></li>
+                <li><a href="tracker.html">Tracker</a></li>
+                <li><a href="recommender.html">Recommender</a></li>
+                <li><a href="flow.html">Reading Flow</a></li>
+                <li><a href="feedback.html" class="active">Feedback</a></li>
+                
+                <li id="login-container"></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main> 
+        <div style="max-width: 800px; margin: 0 auto; padding-top: 2rem;">
+            
+            <section class="glass-panel">
+                <h2 class="brand-gradient" style="text-align: center; margin-bottom: 25px;">Frequently Asked Questions</h2>
+                
+                <button class="accordion">How do I track my reading?</button>
+                <div class="panel">
+                    <p style="padding: 15px;">Navigate to the 'Tracker' page, enter the total pages of your book and how many you've read. We'll calculate the percentage and days remaining!</p>
+                </div>
+
+                <button class="accordion">Is Readify free to use?</button>
+                <div class="panel">
+                    <p style="padding: 15px;">Yes, Readify is a completely free platform developed to help you organize your reading habits.</p>
+                </div>
+
+                <button class="accordion">How does the recommender work?</button>
+                <div class="panel">
+                    <p style="padding: 15px;">We use a smart filtering algorithm to check your selected genre and book length against our database to find the perfect match.</p>
+                </div>
+            </section>
+
+            <section class="glass-panel" style="margin-top: 30px;">
+                <h2 class="brand-gradient" style="text-align: center; margin-bottom: 20px;">Send Us Feedback</h2>
+                <form id="feedback-form">
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-weight: bold; color: #555;">Name</label>
+                        <input type="text" id="fb-name" placeholder="Your Name" required style="background: rgba(255,255,255,0.5);">
+                    </div>
+                    
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-weight: bold; color: #555;">Email</label>
+                        <input type="email" id="fb-email" placeholder="Your Email" required style="background: rgba(255,255,255,0.5);">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="font-weight: bold; color: #555;">Message</label>
+                        <textarea id="fb-msg" rows="5" placeholder="Tell us what you think..." required style="background: rgba(255,255,255,0.5);"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-btn" style="width: 100%;">Submit Feedback</button>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content" style="max-width: 800px; margin: 0 auto;">
+            <div class="footer-menu">
+                <a href="index.html">Home</a>
+                <a href="explorer.html">Book Explorer</a>
+                <a href="tracker.html">Tracker</a>
+                <a href="recommender.html">Recommender</a>
+                <a href="flow.html">Reading Flow</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+        </div>
+        <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.8rem;">&copy; 2026 Readify. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/auth.js"></script>
+    <script src="script.js"></script>
+    <script src="/js/feedback.js"></script>
+
+    
+</body>
+</html>

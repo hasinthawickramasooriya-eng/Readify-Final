@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readify | Recommender</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Readify Logo">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explorer.html">Book Explorer</a></li>
+                <li><a href="tracker.html">Tracker</a></li>
+                <li><a href="recommender.html" class="active">Recommender</a></li>
+                <li><a href="flow.html">Reading Flow</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                
+                <li id="login-container"></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main>
+        <div style="max-width: 700px; margin: 0 auto; text-align: center; padding-top: 2rem;">
+            
+            <section class="glass-panel">
+                <i class="fas fa-robot" style="font-size: 3.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                <h1 class="brand-gradient" style="margin-bottom: 10px;">Find Your Next Read</h1>
+                <p style="color: #666; margin-bottom: 30px;">Not sure what to read? Let our AI pick for you.</p>
+
+                <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 25px; flex-wrap: wrap;">
+                    <div style="text-align: left; flex: 1; min-width: 200px;">
+                        <label style="font-weight: bold; color: var(--secondary-color); display: block; margin-bottom: 8px;">Genre:</label>
+                        <select id="rec-genre" style="padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.7); width: 100%;">
+                            <option value="any">Surprise Me (Any)</option>
+                            <option value="Fiction">Fiction</option>
+                            <option value="Non-Fiction">Non-Fiction</option>
+                            <option value="Romance">Romance</option> <option value="Sci-Fi">Sci-Fi</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Mystery">Mystery</option>
+                            <option value="Comics">Comics</option>
+                        </select>
+                    </div>
+
+                    <div style="text-align: left; flex: 1; min-width: 200px;">
+                        <label style="font-weight: bold; color: var(--secondary-color); display: block; margin-bottom: 8px;">Length:</label>
+                        <select id="rec-length" style="padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.7); width: 100%;">
+                            <option value="any">Any Length</option>
+                            <option value="Short">Short</option> <option value="Medium">Medium</option> <option value="Long">Long</option> </select>
+                    </div>
+                </div>
+
+                <button onclick="recommendBook()" class="cta-btn" style="padding: 12px 40px; font-size: 1.1rem; width: auto; min-width: 200px;">
+                    <i class="fas fa-search"></i> Find a Book
+                </button>
+            </section>
+
+            <div id="recommendation-result" class="glass-panel" style="display: none; margin-top: 50px; border-top: 5px solid var(--primary-color); animation: slideDown 0.5s ease;">
+                
+                <div id="spinner" style="display:none; margin: 30px;">
+                    <i class="fas fa-spinner fa-spin fa-3x" style="color: var(--primary-color);"></i>
+                    <p style="margin-top: 15px; color: #666;">Analyzing your taste...</p>
+                </div>
+                
+                <div id="book-content">
+                    <h2 id="rec-title" class="brand-gradient" style="margin-bottom: 5px;"></h2>
+                    <h4 id="rec-author" style="color: #666; margin-bottom: 20px; font-weight: bold;"></h4>
+                    
+                    <p id="rec-synopsis" style="font-style: italic; color: #444; margin-bottom: 30px; line-height: 1.8;"></p>
+                    
+                    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                        <button onclick="saveToMyList(document.getElementById('recommendation-result').dataset.currentBookTitle)" class="secondary-btn" style="flex: 1; white-space: nowrap; max-width: 200px;">
+                            <i class="fas fa-bookmark"></i> Save to List
+                        </button>
+                        <button onclick="recommendBook()" class="cta-btn" style="background: #eee; color: #333; flex: 1; white-space: nowrap; max-width: 200px; margin-top: 0; box-shadow: none; border: 1px solid #ccc;">
+                            <i class="fas fa-redo"></i> Pick Again
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content" style="max-width: 800px; margin: 0 auto;">
+            <div class="footer-menu">
+                <a href="index.html">Home</a>
+                <a href="explorer.html">Book Explorer</a>
+                <a href="tracker.html">Tracker</a>
+                <a href="recommender.html">Recommender</a>
+                <a href="flow.html">Reading Flow</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+        </div>
+        <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.8rem;">&copy; 2026 Readify. All rights reserved.</p>
+    </footer>
+
+    
+    <script src="/js/auth.js"></script>
+    <script src="script.js"></script>
+    <script src="/js/books.js"></script>
+    <script src="/js/recommender.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readify | Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Readify Logo">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explorer.html">Book Explorer</a></li>
+                <li><a href="tracker.html" class="active">Tracker</a></li>
+                <li><a href="recommender.html">Recommender</a></li>
+                <li><a href="flow.html">Reading Flow</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                
+                <li id="login-container"></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main>
+        <div style="max-width: 600px; margin: 0 auto; padding-top: 2rem;">
+            
+            <section class="glass-panel">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h2 class="brand-gradient" style="font-size: 2rem;">Reading Tracker</h2>
+                    <p style="color: #666;">Track your current read and estimate when you'll finish.</p>
+                </div>
+
+                <form id="tracker-form">
+                    <div style="margin-bottom: 20px;">
+                        <label for="book-total" style="display:block; font-weight:bold; color: var(--secondary-color); margin-bottom: 5px;">Total Pages in Book:</label>
+                        <input type="number" id="book-total" placeholder="e.g. 350" required min="1" style="background: rgba(255,255,255,0.5);">
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <label for="pages-read" style="display:block; font-weight:bold; color: var(--secondary-color); margin-bottom: 5px;">Pages Read So Far:</label>
+                        <input type="number" id="pages-read" placeholder="e.g. 120" required min="0" style="background: rgba(255,255,255,0.5);">
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <label for="read-speed" style="display:block; font-weight:bold; color: var(--secondary-color); margin-bottom: 5px;">Average Pages Read Per Day:</label>
+                        <input type="number" id="read-speed" placeholder="e.g. 20" required min="1" style="background: rgba(255,255,255,0.5);">
+                    </div>
+
+                    <button type="submit" class="cta-btn" style="width:100%; font-size: 1.1rem;">Calculate Progress</button>
+                </form>
+            </section>
+
+            <div id="tracker-results" class="glass-panel" style="display:none; text-align: center; border-left: 5px solid var(--accent-color); animation: slideDown 0.5s ease;">
+                <h3 style="color: var(--secondary-color); margin-bottom: 15px;">Your Progress</h3>
+                
+                <div class="progress-container" style="height: 30px; border-radius: 15px;">
+                    <div class="progress-bar" id="progress-bar" style="line-height: 30px; font-weight: bold;">0%</div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-around; margin-top: 25px;">
+                    <div style="text-align: center;">
+                        <span style="font-size: 2rem; font-weight: 800; color: var(--primary-color);" id="percent-text">0%</span>
+                        <p style="font-size: 0.9rem; color: #666;">Completed</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <span style="font-size: 2rem; font-weight: 800; color: var(--accent-color);" id="days-left">0</span>
+                        <p style="font-size: 0.9rem; color: #666;">Days Left</p>
+                    </div>
+                </div>
+
+                <button onclick="saveProgress()" class="secondary-btn" style="margin-top: 25px; width: 100%;">
+                    <i class="fas fa-save"></i> Save Progress
+                </button>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content" style="max-width: 800px; margin: 0 auto;">
+            <div class="footer-menu">
+                <a href="index.html">Home</a>
+                <a href="explorer.html">Book Explorer</a>
+                <a href="tracker.html">Tracker</a>
+                <a href="recommender.html">Recommender</a>
+                <a href="flow.html">Reading Flow</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+        </div>
+        <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.8rem;">&copy; 2026 Readify. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/books.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="script.js"></script>
+    <script src="/js/tracker.js"></script>
+
+</body>
+</html>

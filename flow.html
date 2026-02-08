@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readify | Reading Flow</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Readify Logo">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explorer.html">Book Explorer</a></li>
+                <li><a href="tracker.html">Tracker</a></li>
+                <li><a href="recommender.html">Recommender</a></li>
+                <li><a href="flow.html" class="active">Reading Flow</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                
+                <li id="login-container"></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main>
+        <div style="max-width: 900px; margin: 0 auto; padding-top: 2rem;">
+            
+            <section class="glass-panel" style="text-align: center;">
+                <h1 class="brand-gradient" style="margin-bottom: 10px;">Reading Vibe</h1>
+                <p style="color: #666; margin-bottom: 30px;">Select a track to set the mood for your reading session.</p>
+
+                <div class="sound-grid">
+                    <div class="sound-card" onclick="toggleSound('guitar')">
+                        <i class="fas fa-guitar"></i>
+                        <h3>Acoustic</h3>
+                        <p style="font-size: 0.9rem; color: #888;">Relaxing guitar</p>
+                        <audio id="audio-guitar" src="assets/guitar.mp3" loop></audio>
+                    </div>
+
+                    <div class="sound-card" onclick="toggleSound('lofi')">
+                        <i class="fas fa-headphones"></i>
+                        <h3>Lo-Fi</h3>
+                        <p style="font-size: 0.9rem; color: #888;">Slowed & Chill</p>
+                        <audio id="audio-lofi" src="assets/lofi.mp3" loop></audio>
+                    </div>
+
+                    <div class="sound-card" onclick="toggleSound('calm')">
+                        <i class="fas fa-music"></i>
+                        <h3>Ambient</h3>
+                        <p style="font-size: 0.9rem; color: #888;">Soft & Calm</p>
+                        <audio id="audio-calm" src="assets/calm.mp3" loop></audio>
+                    </div>
+
+                    <div class="sound-card" onclick="toggleSound('rain')">
+                        <i class="fas fa-cloud-rain"></i>
+                        <h3>Rain</h3>
+                        <p style="font-size: 0.9rem; color: #888;">Gentle Rainfall</p>
+                        <audio id="audio-rain" src="assets/rain.mp3" loop></audio>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.6; font-style: italic;">*Click icon to play/pause.*</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content" style="max-width: 800px; margin: 0 auto;">
+            <div class="footer-menu">
+                <a href="index.html">Home</a>
+                <a href="explorer.html">Book Explorer</a>
+                <a href="tracker.html">Tracker</a>
+                <a href="recommender.html">Recommender</a>
+                <a href="flow.html">Reading Flow</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+        </div>
+        <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.8rem;">&copy; 2026 Readify. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/auth.js"></script>
+    <script src="script.js"></script>
+    <script src="/js/flow.js"></script>
+
+</body>
+</html>
