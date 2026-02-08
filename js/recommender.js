@@ -1,3 +1,5 @@
+let currentRecommendedBook = null;
+
 document.addEventListener("DOMContentLoaded", () => {
   const genre = document.getElementById("rec-genre");
   const length = document.getElementById("rec-length");
@@ -34,16 +36,46 @@ function recommendBook() {
 
     if (candidates.length > 0) {
       const randomBook = candidates[Math.floor(Math.random() * candidates.length)];
+      currentRecommendedBook = randomBook;
       document.getElementById("rec-title").innerText = randomBook.title;
       document.getElementById("rec-author").innerText = "By " + randomBook.author;
       document.getElementById("rec-synopsis").innerText = randomBook.synopsis;
-      resultDiv.dataset.currentBookTitle = randomBook.title;
     } else {
       document.getElementById("rec-title").innerText = "No Matches Found";
       document.getElementById("rec-author").innerText = "Try changing your filters.";
       document.getElementById("rec-synopsis").innerText = "";
+      currentRecommendedBook = null;
     }
 
     contentDiv.style.opacity = "1";
   }, 600);
+}
+
+function saveToMyList() {
+  if (!currentRecommendedBook) {
+    alert("No book to save!");
+    return;
+  }
+
+  const user = localStorage.getItem("readifyUser");
+  if (!user) {
+    alert("Please login to save books.");
+    if (typeof openAuthModal === "function") openAuthModal();
+    return;
+  }
+
+  let myList = JSON.parse(localStorage.getItem("userLibrary")) || [];
+  
+  const isDuplicate = myList.some(savedBook => savedBook.title === currentRecommendedBook.title);
+
+  if (!isDuplicate) {
+    myList.push({
+        title: currentRecommendedBook.title,
+        image: currentRecommendedBook.image
+    });
+    localStorage.setItem("userLibrary", JSON.stringify(myList));
+    alert(`"${currentRecommendedBook.title}" saved to your account!`);
+  } else {
+    alert("You already saved this book.");
+  }
 }
