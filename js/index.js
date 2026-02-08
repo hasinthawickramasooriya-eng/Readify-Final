@@ -13,10 +13,16 @@ if (typeof authors === 'undefined') {
   ];
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  setupQuotes();
-  setupAuthorOfTheDay(); 
-});
+function initIndex() {
+  try { setupQuotes(); } catch (e) { console.warn('setupQuotes error', e); }
+  try { setupAuthorOfTheDay(); } catch (e) { console.warn('setupAuthorOfTheDay error', e); }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener("DOMContentLoaded", initIndex);
+} else {
+  initIndex();
+}
 
 function setupQuotes() {
   const quoteDisplay = document.querySelector("#quote-display p");
