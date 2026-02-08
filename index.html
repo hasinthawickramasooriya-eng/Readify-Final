@@ -8,7 +8,6 @@
     <link rel="manifest" href="manifest.json"> 
     <link rel="icon" href="images/logotop.png" type="img/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Preload hero images to avoid flash when switching themes -->
     <link rel="preload" as="image" href="./images/hero-light.jpg">
     <link rel="preload" as="image" href="./images/hero-dark.jpg">
     
@@ -328,7 +327,6 @@
             }
         });
 
-        // Verify scripts loaded
         document.addEventListener('DOMContentLoaded', () => {
             console.log("✓ Index page loaded");
             console.log("✓ bookData available:", typeof bookData !== 'undefined');
@@ -343,7 +341,6 @@
     <script src="debug.js"></script>
 
     <script>
-        // Final fallback: Ensure author card is populated once authors data is available
         (function() {
             const authorCard = document.getElementById('author-card');
             if (!authorCard) return;
@@ -366,9 +363,8 @@
                 return false;
             }
             
-            // Try immediately, then poll every 50ms for up to 3 seconds
             let attempts = 0;
-            const maxAttempts = 60; // 60 * 50ms = 3 seconds
+            const maxAttempts = 60; 
             
             if (!renderAuthorFallback()) {
                 const timer = setInterval(() => {

@@ -25,14 +25,12 @@ function setupTheme() {
 
 function toggleTheme() {
   const body = document.body;
-  // briefly disable transitions/animations to avoid flashing
   body.classList.add('theme-transition-disabled');
   requestAnimationFrame(() => {
     body.classList.toggle("dark-mode");
     const isDark = body.classList.contains("dark-mode");
     localStorage.setItem("readifyTheme", isDark ? "dark" : "light");
     updateHeroImage(isDark);
-    // remove the disable class after a short delay so styles settle
     setTimeout(() => body.classList.remove('theme-transition-disabled'), 60);
   });
 }

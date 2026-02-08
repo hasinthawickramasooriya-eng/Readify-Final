@@ -164,10 +164,8 @@ const authors = [
     { name: "Christos Gage", bio: "Acclaimed writer for comics, film, and television, notably for Marvel's Spider-Man projects." }
 ];
 
-// Expose as window properties so inline scripts and debug checks can access them
 try {
     window.bookData = bookData;
     window.authors = authors;
 } catch (e) {
-    // ignore in environments where window is not available
 }
