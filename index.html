@@ -339,5 +339,47 @@
     <script src="js/index.js"></script>
     <script src="debug.js"></script>
 
+    <script>
+        // Final fallback: Ensure author card is populated once authors data is available
+        (function() {
+            const authorCard = document.getElementById('author-card');
+            if (!authorCard) return;
+            
+            function renderAuthorFallback() {
+                if (window.authors && Array.isArray(window.authors) && window.authors.length > 0) {
+                    const today = new Date().getDate();
+                    const selectedAuthor = window.authors[today % window.authors.length];
+                    
+                    authorCard.innerHTML = `
+                        <h3 class="brand-gradient" style="margin-bottom: 10px;">${selectedAuthor.name}</h3>
+                        <p style="font-size: 0.95rem; line-height: 1.5;">${selectedAuthor.bio}</p>
+                        <small style="display:block; margin-top: 15px; opacity: 0.6; font-style: italic;">
+                            Featured Author for ${new Date().toLocaleDateString()}
+                        </small>
+                    `;
+                    console.log("✓ Author of the Day rendered:", selectedAuthor.name);
+                    return true;
+                }
+                return false;
+            }
+            
+            // Try immediately, then poll every 50ms for up to 3 seconds
+            let attempts = 0;
+            const maxAttempts = 60; // 60 * 50ms = 3 seconds
+            
+            if (!renderAuthorFallback()) {
+                const timer = setInterval(() => {
+                    attempts++;
+                    if (renderAuthorFallback() || attempts >= maxAttempts) {
+                        clearInterval(timer);
+                        if (attempts >= maxAttempts) {
+                            console.warn("⚠ Authors data not loaded after 3 seconds");
+                        }
+                    }
+                }, 50);
+            }
+        })();
+    </script>
+
 </body>
 </html>
