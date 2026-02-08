@@ -567,3 +567,10 @@ body.dark-mode .saved-book-card img {
     color: white;
 }
 }
+
+/* Temporarily disable transitions/animations while switching theme to avoid visual flash */
+.theme-transition-disabled,
+.theme-transition-disabled * {
+    transition: none !important;
+    animation: none !important;
+}
