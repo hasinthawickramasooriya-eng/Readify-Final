@@ -127,17 +127,17 @@ const bookData = [
         image: "images/Atomic Habits.jpg",
         synopsis: "An easy and proven way to build good habits and break bad ones. Learn how tiny changes can lead to remarkable results.",
         rating: 4.8,
-        length: "Medium"
+        length: "medium"
     },
     {
         id: 14,
         title: "Sapiens",
-        author: "JYuval Noah Harari",
+        author: "Yuval Noah Harari",
         genre: "Non-Fiction",
         image: "images/Sapiens.jpg",
         synopsis: "A brief history of humankind, exploring how biology and history have defined us and enhanced our understanding of what it means to be human.",
         rating: 4.7,
-        length: "Long"
+        length: "long"
     },
     {
         id: 15,
@@ -147,7 +147,7 @@ const bookData = [
         image: "images/TwistedLove.jpg",
         synopsis: "A cold, driven man agrees to watch over his best friend’s sister and discovers she’s the one person who can break through his walls, pulling them into a dark, intense romance shaped by secrets and past trauma.",
         rating: 3.71,
-        length: "Long"
+        length: "long"
     }
 
 ];
