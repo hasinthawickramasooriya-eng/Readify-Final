@@ -42,8 +42,10 @@ function setupQuotes() {
 
 function setupAuthorOfTheDay() {
   const authorContainer = document.getElementById('author-card');
+  console.log('setupAuthorOfTheDay: start', { authorContainerExists: !!authorContainer, authorsType: typeof authors });
   
   setTimeout(() => {
+    console.log('setupAuthorOfTheDay: in timeout', { authorsPresent: Array.isArray(authors), authorsLen: Array.isArray(authors) ? authors.length : null });
     if (authorContainer && typeof authors !== 'undefined' && authors.length > 0) {
       const today = new Date().getDate();
       const index = today % authors.length;
