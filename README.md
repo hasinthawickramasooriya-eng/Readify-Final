@@ -1,31 +1,85 @@
-📖 Readify | Interactive Reading Companion
-Readify is a modern, responsive web application designed for bibliophiles to explore libraries, track reading progress, and create an ambient reading environment. Built with a focus on Modular JavaScript and Glassmorphism UI, it offers a seamless app-like experience as a Progressive Web App (PWA).
+📘 Readify – Online Reading & Book Companion Platform
 
-✨ Key Features
-10-File Modular Infrastructure: Logic is decoupled into dedicated modules (auth, explorer, tracker, etc.) to prevent "Spaghetti Code" and ensure stability.
+Readify is a front-end web-based reading platform designed as an online library and reading companion. The application allows users to explore books, track reading progress, receive recommendations, and manage their favorite books through a simple and interactive interface.
+The project is developed using HTML5, CSS3, and Vanilla JavaScript, focusing on clean design, usability, and modern UI practices without relying on external frameworks.
 
-Smart Book Explorer: Real-time filtering by title, author, or genre using ES6 high-order functions.
+🌐 Live Preview
 
-Personalized Accounts: Stateful user profiles that store "Saved Books" in browser Local Storage for persistent access.
+The website is hosted using GitHub Pages and can be accessed via:
 
-Reading Tracker: A mathematical engine that calculates completion percentages and estimates days remaining based on reading speed.
 
-Ambient Reading Flow: Integrated audio sanctuary with togglable soundscapes (Acoustic, Lo-Fi, Rain) managed by logical sound-collision prevention.
+🛠️ Technologies Used
 
-Memory-Optimized Modals: Detailed book views are injected into the DOM only upon request to save system memory.
+HTML5 – Page structure and semantic layout
 
-🎨 Design Philosophy
-Glassmorphism: A UI aesthetic utilizing backdrop-filter blur, vibrant gradients, and floating background "blobs".
+CSS3 – Styling, animations, gradients, and responsive design
 
-Typography: Hero headers at 3.5rem for brand identity, with body copy at 1rem and a 1.6 line-height for maximum readability.
+Vanilla JavaScript – Interactivity, state handling, theme switching, and local storage
 
-Theme Engine: Full support for Light and Dark modes with persistent user preference saved to the browser.
+GitHub Pages – Deployment and hosting
 
-🛠️ Technical Stack
-Frontend: HTML5, CSS3 (Custom Variables), ES6+ JavaScript.
+No external libraries or frameworks were used.
 
-Persistence: Browser localStorage API for stateful user data.
+📄 Website Pages
 
-Architecture: Modular Script Pattern (10-file system).
+The Readify platform consists of six main pages:
 
-Framework: None (Pure Vanilla JS for maximum performance).
+Home
+Introduction to the platform with a hero section and call-to-action for users to start reading.
+
+Book Explorer
+Allows users to browse and discover books available on the platform.
+
+Tracker
+Enables users to track their reading progress and manage ongoing reads.
+
+Recommender
+Suggests books based on user interests and reading behavior.
+
+Reading Flow
+Provides a focused and distraction-free reading experience.
+
+Feedback
+Collects user feedback to improve the reading experience.
+
+🌙 Light & Dark Mode
+
+Readify includes Light Mode and Dark Mode for better accessibility and user comfort.
+
+Theme preferences are stored using localStorage, allowing the selected mode to persist across sessions.
+
+Users can toggle the theme using the settings or icon in the navigation bar.
+
+👤 Login & Profile Features
+
+A login option is available via the navigation bar.
+
+Once logged in, users can access their profile icon.
+
+Clicking the profile icon allows users to:
+
+Save books to a Favorites List
+
+View previously saved favorite books
+
+Favorite book data is stored locally using browser localStorage.
+
+⭐ Favorite Books Functionality
+
+Users can mark books as favorites from relevant pages.
+
+Favorite selections are saved locally and remain available even after refreshing the page.
+
+This feature simulates a personalized library experience.
+
+🎨 Design & UI Highlights
+
+Modern and calm visual theme suitable for a digital reading platform
+
+Smooth hover effects and transitions
+
+Gradient-based accents for visual appeal
+
+Responsive layout optimized for desktop and tablet screens
+
+Devoloped By : Hasintha Wickramasooriya
