@@ -313,7 +313,7 @@ footer {
     transition: max-height 0.3s ease-out;
     border-radius: 0 0 8px 8px;
     margin-bottom: 10px;
-    color: #555;
+    color: #333;
 }
 
 select {

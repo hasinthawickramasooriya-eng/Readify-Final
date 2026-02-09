@@ -43,7 +43,7 @@ function renderBooks(booksToRender) {
   bookGrid.innerHTML = "";
   if (!booksToRender || booksToRender.length === 0) {
     bookGrid.innerHTML =
-      '<p style="grid-column: 1/-1; text-align: center; color: #666;">No books found matching your search.</p>';
+      '<p style="grid-column: 1/-1; text-align: center; color: #333;">No books found matching your search.</p>';
     return;
   }
 

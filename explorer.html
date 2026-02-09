@@ -37,11 +37,13 @@
     <main>
         <section class="glass-panel" style="text-align: center; margin-bottom: 2rem;">
             <h1 class="brand-gradient" style="margin-bottom: 10px;">Explore Our Library</h1>
-            <p style="margin-bottom: 25px; color: #555;">Search by title, author, or filter by genre.</p>
+            <p style="margin-bottom: 25px; color: #333;">Search by title, author, or filter by genre.</p>
             
             <div style="display: flex; gap: 10px; max-width: 700px; margin: 0 auto; flex-wrap: wrap;">
+                <label for="search-input" style="display: none;">Search</label>
                 <input type="text" id="search-input" placeholder="Search title or author (e.g. 'Dune')..." style="flex: 2; padding: 15px; background: rgba(255,255,255,0.7);">
                 
+                <label for="genre-filter" style="display: none;">Genre Filter</label>
                 <select id="genre-filter" style="flex: 1; min-width: 150px; padding: 15px; background: rgba(255,255,255,0.7); border-radius: 8px;">
                     <option value="all">All Genres</option>
                     <option value="Fiction">Fiction</option>

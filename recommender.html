@@ -39,11 +39,11 @@
             <section class="glass-panel">
                 <i class="fas fa-robot" style="font-size: 3.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
                 <h1 class="brand-gradient" style="margin-bottom: 10px;">Find Your Next Read</h1>
-                <p style="color: #666; margin-bottom: 30px;">Not sure what to read? Let our AI pick for you.</p>
+                <p style="color: #333; margin-bottom: 30px;">Not sure what to read? Let our AI pick for you.</p>
 
                 <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 25px; flex-wrap: wrap;">
                     <div style="text-align: left; flex: 1; min-width: 200px;">
-                        <label style="font-weight: bold; color: var(--secondary-color); display: block; margin-bottom: 8px;">Genre:</label>
+                        <label for="rec-genre" style="font-weight: bold; color: var(--secondary-color); display: block; margin-bottom: 8px;">Genre:</label>
                         <select id="rec-genre" style="padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.7); width: 100%;">
                             <option value="any">Surprise Me (Any)</option>
                             <option value="Fiction">Fiction</option>
@@ -56,7 +56,7 @@
                     </div>
 
                     <div style="text-align: left; flex: 1; min-width: 200px;">
-                        <label style="font-weight: bold; color: var(--secondary-color); display: block; margin-bottom: 8px;">Length:</label>
+                        <label for="rec-length" style="font-weight: bold; color: var(--secondary-color); display: block; margin-bottom: 8px;">Length:</label>
                         <select id="rec-length" style="padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.7); width: 100%;">
                             <option value="any">Any Length</option>
                             <option value="Short">Short</option> <option value="Medium">Medium</option> <option value="Long">Long</option> </select>
@@ -72,12 +72,12 @@
                 
                 <div id="spinner" style="display:none; margin: 30px;">
                     <i class="fas fa-spinner fa-spin fa-3x" style="color: var(--primary-color);"></i>
-                    <p style="margin-top: 15px; color: #666;">Analyzing your taste...</p>
+                    <p style="margin-top: 15px; color: #333;">Analyzing your taste...</p>
                 </div>
                 
                 <div id="book-content">
                     <h2 id="rec-title" class="brand-gradient" style="margin-bottom: 5px;"></h2>
-                    <h4 id="rec-author" style="color: #666; margin-bottom: 20px; font-weight: bold;"></h4>
+                    <h4 id="rec-author" style="color: #333; margin-bottom: 20px; font-weight: bold;"></h4>
                     
                     <p id="rec-synopsis" style="font-style: italic; color: #444; margin-bottom: 30px; line-height: 1.8;"></p>
                     

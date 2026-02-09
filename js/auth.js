@@ -7,7 +7,7 @@ function setupGlobalLogin() {
 
           <div id="login-form-container">
             <h2 style="color: var(--primary-color);">Welcome Back</h2>
-            <p style="opacity: 0.7; margin-bottom: 20px;">Sign in to your library.</p>
+            <p style="opacity: 0.8; margin-bottom: 20px;">Sign in to your library.</p>
             <input type="text" id="login-username" placeholder="Username" style="background: white; color: #333; border: 1px solid #ddd;">
             <button class="cta-btn" style="width: 100%; margin-top:10px;" onclick="performAuth('login')">Sign In</button>
             <p class="auth-toggle-link" 
@@ -19,7 +19,7 @@ function setupGlobalLogin() {
 
           <div id="register-form-container" style="display: none;">
             <h2 style="color: var(--accent-color);">Join Readify</h2>
-            <p style="opacity: 0.7; margin-bottom: 20px;">Start your reading journey today.</p>
+            <p style="opacity: 0.8; margin-bottom: 20px;">Start your reading journey today.</p>
             <input type="text" id="reg-username" placeholder="Choose Username" style="background: white; color: #333; border: 1px solid #ddd;">
             <input type="email" id="reg-email" placeholder="Email Address" style="background: white; color: #333; border: 1px solid #ddd;">
             <button class="cta-btn" style="width: 100%; margin-top:10px; background: var(--accent-color);" onclick="performAuth('register')">Register</button>
